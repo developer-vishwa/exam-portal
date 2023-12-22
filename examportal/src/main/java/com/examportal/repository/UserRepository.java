@@ -1,2 +1,11 @@
-package com.examportal.repository;public interface UserRepository {
+package com.examportal.repository;
+
+import com.examportal.domain.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
+
+    public User findByUserName(String userName);
 }
